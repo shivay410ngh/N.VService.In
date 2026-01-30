@@ -617,6 +617,11 @@
                     document.getElementById('userAvatar').textContent = user.name.charAt(0).toUpperCase();
                     renderServices();
                     loadPendingOrders();
+                    const adminBtn = document.querySelector('[data-section="admin"]');
+
+if (adminBtn && currentUser.email !== ADMIN_EMAIL) {
+    adminBtn.style.display = "none";
+}
                 }, 1000);
             } else {
                 showAuthError('❌ Invalid email or password!');
